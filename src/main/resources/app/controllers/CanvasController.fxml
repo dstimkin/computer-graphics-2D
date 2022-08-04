@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.CanvasController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="28.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Draw">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onDrawLineClick" text="Line" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDrawCircleClick" text="Circle" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDrawEllipseClick" text="Ellipse" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDrawRectangleClick" text="Rectangle" />
+               </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Fill">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onFillRowClick" text="Rows" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Utils">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onClearClick" text="Clear" />
+                  <MenuItem mnemonicParsing="false" onAction="#onResetSelection" text="Reset selection" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Different">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onCurvesClick" text="Curves" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onAboutAuthorClick" text="Author" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Canvas fx:id="canvas" height="441.0" layoutX="114.0" layoutY="60.0" onMouseClicked="#onCanvasMouseClicked" onMouseMoved="#onCanvasMouseMoved" width="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+      <Pane layoutY="28.0" prefHeight="34.0" prefWidth="699.0" style="-fx-background-color: #e8e8e8#e8e8e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <ColorPicker fx:id="colorPicker" layoutX="566.0" layoutY="3.0">
+               <value>
+                  <Color />
+               </value>
+            </ColorPicker>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
